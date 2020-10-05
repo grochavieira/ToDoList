@@ -2,10 +2,14 @@ import React from "react";
 
 import "./styles.css";
 
-const Button = () => {
+interface ButtonProps {
+  name: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ name }) => {
   return (
     <div className="button-block">
-      <button></button>
+      <button type="submit">{name}</button>
     </div>
   );
 };

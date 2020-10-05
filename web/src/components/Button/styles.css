@@ -1,0 +1,54 @@
+.button-block {
+    width: 100%;
+}
+
+.button-block button {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 0;
+    border-radius: 3px;
+    padding: 1.2rem 3rem;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    color: var(--color-secondary);
+    background-color: var(--color-accent-1);
+}
+
+.button-block button:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+}
+
+.button-block button:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.button-block button:focus {
+    outline: none;
+}
+
+.button-block button:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0rem 0.5rem 0.1rem 0rem rgba(#000, 0.2);
+}
+
+.button-block button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    background-color: var(--color-accent-1);
+}

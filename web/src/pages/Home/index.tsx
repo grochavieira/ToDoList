@@ -10,6 +10,7 @@ const Home = () => {
         <h1>To Do List</h1>
         <form action="#">
           <Input name="todo" label="todo" placeholder="todo" />
+          <Button name="Criar ToDo" />
         </form>
       </main>
     </div>
