@@ -3,19 +3,36 @@ import { FiTrash2 } from "react-icons/fi";
 
 import "./styles.css";
 
-interface ToDoProps {
+export interface IToDo {
   value: string;
-  index: number;
-  onDelete: (index: number) => void;
+  completed: boolean;
 }
 
-const ToDo: React.FC<ToDoProps> = ({ value, onDelete, index }) => {
+interface ToDoProps {
+  todo: IToDo;
+  index: number;
+  onDelete: (index: number) => void;
+  setCheckboxValue: (index: number) => void;
+}
+
+const ToDo: React.FC<ToDoProps> = ({
+  todo,
+  onDelete,
+  index,
+  setCheckboxValue,
+}) => {
   return (
     <div className="todo-block">
       <div className="checkbox-block">
-        <input type="checkbox" name="" id="" />
+        <input
+          onClick={() => setCheckboxValue(index)}
+          defaultChecked={todo.completed}
+          type="checkbox"
+          name=""
+          id=""
+        />
       </div>
-      <div className="todo-value">{value}</div>
+      <div className="todo-value">{todo.value}</div>
       <div className="delete-button">
         <button onClick={() => onDelete(index)}>
           <FiTrash2 className="r-icon" size={24} />

@@ -1,22 +1,35 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState, useEffect } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import ToDo from "../../components/ToDo";
+import ToDo, { IToDo } from "../../components/ToDo";
 import "./styles.css";
 
 const Home = () => {
   const [todo, setTodo] = useState("");
-  const [todoList, setTodoList] = useState<Array<string>>([]);
+  const [todoList, setTodoList] = useState<Array<IToDo>>([]);
+
+  useEffect(() => {
+    console.log(todoList);
+  }, [todoList]);
 
   function handleDelete(index: number) {
     let newTodoList = todoList.filter((todo, idx) => idx !== index);
     setTodoList(newTodoList);
-    console.log(todoList);
   }
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setTodoList([...todoList, todo]);
+    const todoObject = {
+      value: todo,
+      completed: false,
+    };
+    setTodoList([...todoList, todoObject]);
+  }
+
+  function handleCheckbox(index: number) {
+    const newTodoList = todoList;
+    newTodoList[index].completed = !newTodoList[index].completed;
+    setTodoList(newTodoList);
   }
 
   return (
@@ -39,8 +52,9 @@ const Home = () => {
             {todoList.map((todo, index) => (
               <ToDo
                 key={index}
-                value={todo}
+                todo={todo}
                 index={index}
+                setCheckboxValue={handleCheckbox}
                 onDelete={handleDelete}
               />
             ))}
