@@ -8,6 +8,12 @@ const Home = () => {
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState<Array<string>>([]);
 
+  function handleDelete(index: number) {
+    let newTodoList = todoList.filter((todo, idx) => idx !== index);
+    setTodoList(newTodoList);
+    console.log(todoList);
+  }
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setTodoList([...todoList, todo]);
@@ -30,10 +36,14 @@ const Home = () => {
 
         {todoList.length > 0 ? (
           <div className="todo-list-container">
-            {todoList.map((todo, index) => {
-              console.log(index);
-              return <ToDo key={index} value={todo} />;
-            })}
+            {todoList.map((todo, index) => (
+              <ToDo
+                key={index}
+                value={todo}
+                index={index}
+                onDelete={handleDelete}
+              />
+            ))}
           </div>
         ) : (
           ""
