@@ -8,6 +8,9 @@ const Home = () => {
     <div className="home-container">
       <main className="todo-container">
         <h1>To Do List</h1>
+        <form action="#">
+          <Input name="todo" label="todo" placeholder="todo" />
+        </form>
       </main>
     </div>
   );

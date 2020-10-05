@@ -2,11 +2,17 @@ import React from "react";
 
 import "./styles.css";
 
-const Input = () => {
+interface InputProps {
+  name: string;
+  label: string;
+  placeholder: string;
+}
+
+const Input: React.FC<InputProps> = ({ name, label, placeholder }) => {
   return (
     <div className="input-block">
-      <input type="text" />
-      <label htmlFor=""></label>
+      <input name={name} type="text" placeholder={placeholder} required />
+      <label htmlFor={name}>{label}</label>
     </div>
   );
 };
