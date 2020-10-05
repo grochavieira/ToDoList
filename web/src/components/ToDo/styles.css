@@ -1,0 +1,46 @@
+.todo-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1.5rem 0;
+  border-bottom: 2px solid var(--color-accent-2);
+}
+
+.todo-block .checkbox-block input {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.todo-block .todo-value {
+  width: 70%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 3px;
+  word-wrap: break-word;
+}
+
+.todo-block .delete-button {
+  height: 100%;
+}
+
+.todo-block .delete-button button {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todo-block .delete-button button .r-icon {
+  color: var(--color-accent-2);
+  transition: all 0.2s;
+}
+
+.todo-block .delete-button button:hover .r-icon {
+  opacity: 0.5;
+}
