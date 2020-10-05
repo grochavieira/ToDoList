@@ -9,7 +9,16 @@ const Home = () => {
   const [todoList, setTodoList] = useState<Array<IToDo>>([]);
 
   useEffect(() => {
-    console.log(todoList);
+    const jsonTodoList = localStorage.getItem("todoList");
+    if (jsonTodoList) {
+      setTodoList(JSON.parse(jsonTodoList));
+    }
+  }, []);
+
+  useEffect(() => {
+    const jsonTodoList = JSON.stringify(todoList);
+    localStorage.setItem("todoList", jsonTodoList);
+    console.log(jsonTodoList);
   }, [todoList]);
 
   function handleDelete(index: number) {
@@ -30,6 +39,7 @@ const Home = () => {
     const newTodoList = todoList;
     newTodoList[index].completed = !newTodoList[index].completed;
     setTodoList(newTodoList);
+    console.log(todoList);
   }
 
   return (
