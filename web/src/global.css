@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    --color-primary: #f03a47;
+    --color-secondary: #f7dba7;
+    --color-accent-1: #1b065e;
+    --color-accent-2: #1f1300;
+    --color-accent-3: #8a4fff;
+    background-color: var(--color-primary);
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Karla;
+}
+
+button,
+input {
+    font-family: Karla;
+}
