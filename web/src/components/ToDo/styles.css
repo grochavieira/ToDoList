@@ -36,6 +36,10 @@
   transition: all 0.2s;
 }
 
+.todo-block .delete-button button:focus {
+  outline: none;
+}
+
 .todo-block .delete-button button .r-icon {
   color: var(--color-accent-2);
   transition: all 0.2s;
