@@ -65,7 +65,7 @@ Um simples site de lista de tarefas para adicionar e remover items, salvando os 
 
 ## 🚀 Como executar o projeto
 
-Este projeto é divido contém apenas uma parte:
+Este projeto contém apenas uma parte:
 
 1. Frontend (pasta web)
 
