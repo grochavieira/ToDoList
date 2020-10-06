@@ -38,7 +38,7 @@
 
 ## 💻 Sobre o projeto
 
-Um simples site de lista de tarefas para adicionar e remover, salvando os dados em um local storage do browser.
+Um simples site de lista de tarefas para adicionar e remover items, salvando os dados em um local storage do browser.
 
 ---
 
