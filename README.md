@@ -58,7 +58,7 @@ Um simples site de lista de tarefas para adicionar e remover, salvando os dados 
 ### Demonstração:
 
 <p align="center">
-    <img src="assets/create_post.gif">
+    <img src="assets/todo_demonstration.gif">
 </p>
 
 ---
