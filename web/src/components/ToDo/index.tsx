@@ -23,10 +23,10 @@ const ToDo: React.FC<ToDoProps> = ({
 }) => {
   return (
     <div className="todo-block">
-      <div className="checkbox-block">
+      <div onClick={() => setCheckboxValue(index)} className="checkbox-block">
         <input
-          onClick={() => setCheckboxValue(index)}
-          defaultChecked={todo.completed}
+          onChange={() => {}}
+          checked={todo.completed}
           type="checkbox"
           name=""
           id=""

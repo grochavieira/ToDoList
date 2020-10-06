@@ -7,6 +7,7 @@ import "./styles.css";
 const Home = () => {
   const [todo, setTodo] = useState("");
   const [todoList, setTodoList] = useState<Array<IToDo>>([]);
+  const [checkboxChange, setCheckboxChange] = useState(false);
 
   useEffect(() => {
     const jsonTodoList = localStorage.getItem("todoList");
@@ -18,8 +19,7 @@ const Home = () => {
   useEffect(() => {
     const jsonTodoList = JSON.stringify(todoList);
     localStorage.setItem("todoList", jsonTodoList);
-    console.log(jsonTodoList);
-  }, [todoList]);
+  }, [todoList, checkboxChange]);
 
   function handleDelete(index: number) {
     let newTodoList = todoList.filter((todo, idx) => idx !== index);
@@ -33,13 +33,15 @@ const Home = () => {
       completed: false,
     };
     setTodoList([...todoList, todoObject]);
+    setTodo("");
   }
 
   function handleCheckbox(index: number) {
     const newTodoList = todoList;
-    newTodoList[index].completed = !newTodoList[index].completed;
+    const checkValue = newTodoList[index].completed;
+    newTodoList[index].completed = !checkValue;
     setTodoList(newTodoList);
-    console.log(todoList);
+    setCheckboxChange(!checkboxChange);
   }
 
   return (
